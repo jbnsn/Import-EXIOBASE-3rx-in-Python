@@ -60,10 +60,10 @@ exiobase = scipy.io.loadmat(
     './data/exiobase-3rx/EXIOBASE_3rx_aggLandUseExtensions_2010_pxp.mat'
     )
 
-exio_db_sparse = {}
+# Create a dictionary and save selected elements from
+# `exiobase` in the dicionary
 
-exio_db_sparse['header'] = exiobase['__header__']
-exio_db_sparse['version'] = exiobase['__version__']
+exio_db_sparse = {}
 
 for key, item in zip(
         ['S', 'A', 'V', 'Y', 'x', 'TC', 'F', 'F_hh', 'pop', 'gdp', 'VY'],
@@ -72,10 +72,13 @@ for key, item in zip(
 
     exio_db_sparse[key] = item
 
+exio_db_sparse['header'] = exiobase['__header__']
+exio_db_sparse['version'] = exiobase['__version__']
+
 del key, item
 del exiobase
 
-# %% To dense
+# %% Turn sparse matrices into pd.DataFrames with indices
 
 exio_db_dense = {}
 

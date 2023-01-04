@@ -12,7 +12,6 @@ EXIOBASE 3rx
 - Monetary unit: Million Euros (current prices)
 
 
-
 | Value                 | Size            | Field | Description              |
 |-----------------------|-----------------|-------|--------------------------|
 | sparse.csc.csc_matrix | (452, 42800)    | S     | Stressor matrix          |
@@ -50,8 +49,8 @@ import pandas as pd
 import scipy.io
 
 # %% Import labels
-exio_labs_f = pd.read_csv('./data/exiobase-3rx/labs/f.csv')  # 421
-exio_labs_v = pd.read_csv('./data/exiobase-3rx/labs/v.csv')  # 7*214 = 1498
+exio_labs_f = pd.read_csv('./data/exiobase-3rx/labs/f.csv')  # 452
+exio_labs_v = pd.read_csv('./data/exiobase-3rx/labs/v.csv')  # 12
 exio_labs_y = pd.read_csv('./data/exiobase-3rx/labs/y.csv')  # 7*214 = 1498
 exio_labs_z = pd.read_csv('./data/exiobase-3rx/labs/z.csv')  # 200*214 = 42800
 
